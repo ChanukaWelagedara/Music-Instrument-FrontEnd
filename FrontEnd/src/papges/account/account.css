@@ -1,0 +1,163 @@
+/* Clean Account Page - Matching Uploaded UI */
+.account-page {
+  min-height: 100vh;
+  background-color: var(--color-light);
+  padding: var(--spacing-3xl) 0;
+}
+
+.user-info {
+  max-width: 1280px;
+  margin: 0 auto var(--spacing-2xl);
+  padding: 0 var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.user-info .MuiCard-root {
+  border-radius: var(--radius-lg) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  padding: var(--spacing-xl) !important;
+  background-color: var(--color-white) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+.user-info button {
+  padding: 12px 28px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  align-self: flex-start;
+}
+
+.user-info button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.items-for-sale {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+.items-for-sale h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.items-for-sale .MuiTableContainer-root {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.items-for-sale .MuiTableHead-root .MuiTableCell-root {
+  background-color: var(--color-light);
+  color: var(--color-text-primary) !important;
+  font-weight: 600 !important;
+  font-size: var(--font-size-base) !important;
+  padding: var(--spacing-lg) !important;
+  border-bottom: 2px solid var(--color-border) !important;
+}
+
+.items-for-sale .MuiTableBody-root .MuiTableRow-root {
+  transition: var(--transition);
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.items-for-sale .MuiTableBody-root .MuiTableRow-root:hover {
+  background-color: var(--color-hover);
+}
+
+.items-for-sale .MuiTableCell-root {
+  padding: var(--spacing-md) !important;
+  font-size: var(--font-size-sm) !important;
+  color: var(--color-text-primary) !important;
+}
+
+.items-for-sale img {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
+}
+
+.items-for-sale img:hover {
+  transform: scale(1.05);
+}
+
+.items-for-sale button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 80px;
+}
+
+.items-for-sale .MuiTableCell-root:nth-last-child(2) button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.items-for-sale .MuiTableCell-root:nth-last-child(2) button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.items-for-sale .MuiTableCell-root:last-child button {
+  background-color: var(--color-white);
+  color: var(--color-danger);
+  border: 2px solid var(--color-danger);
+}
+
+.items-for-sale .MuiTableCell-root:last-child button:hover {
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .items-for-sale .MuiTable-root {
+    min-width: 900px;
+  }
+  
+  .items-for-sale .MuiTableContainer-root {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .account-page {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .items-for-sale h2 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .items-for-sale img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-info button {
+    width: 100%;
+  }
+}

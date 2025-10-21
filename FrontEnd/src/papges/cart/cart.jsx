@@ -84,86 +84,97 @@ export const Cart = () => {
   };
 
   return (
-    <div>
-      {isLoading ? (
-        <CircularProgress color="secondary" />
-      ) : (
-        <>
-          <TableContainer style={{ display: 'flex', justifyContent: 'center' }}>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Name</TableCell>
-                  <TableCell>Price</TableCell>
-                  <TableCell>Image</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {items.map((item) => (
-                  <TableRow key={item._id}>
-                    <TableCell>{item.name}</TableCell>
-                    <TableCell>${item.price}</TableCell> 
-                    <TableCell>
-                      <img
-                        src={`http://localhost:5555${item.image}`}
-                        alt={item.name}
-                        style={{ width: "100px", height: "100px" }}
-                      />
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <Typography variant="h6" style={{ textAlign: 'center' }}>
-            Total Amount: {totalAmount}
-          </Typography>
-          <Button
-            style={{
-              backgroundColor: 'blue',
-              color: 'white',
-              borderRadius: '5px',
-              padding: '10px 20px',
-              margin: '10px',
-            }}
-            onClick={buy}
-          >
-            Buy
-          </Button>
-          <Button
-            style={{
-              backgroundColor: 'red',
-              color: 'white',
-              borderRadius: '5px',
-              padding: '10px 20px',
-              margin: '10px',
-            }}
-            onClick={cancelOrder}
-          >
-            Clear Cart
-          </Button>
-        </>
-      )}
+    <div className="cart">
+      <div className="cart-container">
+        <h1 className="cart-title">Shopping Cart</h1>
+        
+        {isLoading ? (
+          <div className="cart-loading">
+            <CircularProgress color="secondary" />
+          </div>
+        ) : (
+          <>
+            {items.length === 0 ? (
+              <div className="cart-empty">
+                <Typography variant="h5">Your cart is empty</Typography>
+              </div>
+            ) : (
+              <>
+                <TableContainer className="cart-table-container">
+                  <Table className="cart-table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell className="cart-table-header">Product</TableCell>
+                        <TableCell className="cart-table-header">Name</TableCell>
+                        <TableCell className="cart-table-header">Price</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {items.map((item) => (
+                        <TableRow key={item._id} className="cart-table-row">
+                          <TableCell>
+                            <img
+                              src={`http://localhost:5555${item.image}`}
+                              alt={item.name}
+                              className="cart-item-image"
+                            />
+                          </TableCell>
+                          <TableCell className="cart-item-name">{item.name}</TableCell>
+                          <TableCell className="cart-item-price">${item.price}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+                
+                <div className="cart-summary">
+                  <Typography variant="h4" className="cart-total">
+                    Total: ${totalAmount}
+                  </Typography>
+                  <div className="cart-actions">
+                    <Button className="cart-btn cart-btn-primary" onClick={buy}>
+                      Proceed to Checkout
+                    </Button>
+                    <Button className="cart-btn cart-btn-danger" onClick={cancelOrder}>
+                      Clear Cart
+                    </Button>
+                  </div>
+                </div>
+              </>
+            )}
+          </>
+        )}
 
-      <Dialog open={isPaymentDialogOpen} onClose={closePaymentDialog}>
-        <DialogTitle>Payment Information</DialogTitle>
-        <DialogContent>
-          <TextField
-            label="Payment Method"
-            value={paymentMethod}
-            onChange={(e) => setPaymentMethod(e.target.value)}
-          />
-          <TextField
-            label="Bank Name"
-            value={bankName}
-            onChange={(e) => setBankName(e.target.value)}
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={closePaymentDialog}>Cancel</Button>
-          <Button onClick={confirmPayment}>Confirm Payment</Button>
-        </DialogActions>
-      </Dialog>
+        <Dialog open={isPaymentDialogOpen} onClose={closePaymentDialog} className="cart-payment-dialog">
+          <DialogTitle className="cart-dialog-title">Payment Information</DialogTitle>
+          <DialogContent className="cart-dialog-content">
+            <TextField
+              label="Payment Method"
+              value={paymentMethod}
+              onChange={(e) => setPaymentMethod(e.target.value)}
+              fullWidth
+              margin="normal"
+              variant="outlined"
+            />
+            <TextField
+              label="Bank Name"
+              value={bankName}
+              onChange={(e) => setBankName(e.target.value)}
+              fullWidth
+              margin="normal"
+              variant="outlined"
+            />
+          </DialogContent>
+          <DialogActions className="cart-dialog-actions">
+            <Button onClick={closePaymentDialog} className="cart-dialog-btn cart-dialog-btn-cancel">
+              Cancel
+            </Button>
+            <Button onClick={confirmPayment} className="cart-dialog-btn cart-dialog-btn-confirm">
+              Confirm Payment
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
     </div>
   );
 };

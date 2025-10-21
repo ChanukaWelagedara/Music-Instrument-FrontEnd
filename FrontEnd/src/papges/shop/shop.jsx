@@ -109,80 +109,49 @@ export const Shop = () => {
   };
 
   return (
-    <div >
+    <div className="shop">
       {categories.map((category) => (
-        <div key={category}>
-
-        <h2 style={{
-                    fontSize: '36px',
-                    color: 'black',
-                    fontStyle: 'italic',
-                    textAlign: 'center',
-                    backgroundImage: `url('/image1.png')`,
-                   
-                    backgroundSize: 'cover', 
-                    backgroundRepeat: 'no-repeat',
-                    padding: '20px', 
-                  }}>
-                    {category}
-        </h2>
+        <div key={category} className="shop-category">
+          <h2 className="shop-category-title">{category}</h2>
           {loadingStates[category] ? (
-            <CircularProgress color="secondary" />
+            <div className="shop-loading">
+              <CircularProgress color="secondary" />
+            </div>
           ) : (
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <Carousel showThumbs={false} showStatus={false} showIndicators={false} showArrows={true} style={{ width: '100%' }}>
+            <div className="shop-carousel-container">
+              <Carousel showThumbs={false} showStatus={false} showIndicators={false} showArrows={true}>
                 {displayedItems[category] && (
-                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <div className="shop-products-grid">
                     {displayedItems[category].map((item) => (
-                      <Card key={item._id} style={{ maxWidth: '300px', margin: '10px', position: 'relative' }}>
+                      <Card key={item._id} className="shop-product-card">
                         {item.condition === "used" && (
-                              <div style={{
-                                background: 'red',
-                                color: 'white',
-                                padding: '5px',
-                                position: 'absolute',
-                                top: '10px',
-                                right: '10px',
-                                borderRadius: '5px',
-                                transform: 'rotate(45deg)'
-                                  
-                              }}>
-                                Used
-                              </div>
-                            )}
+                          <div className="shop-product-badge badge-used">
+                            Used
+                          </div>
+                        )}
 
-                            {item.condition === "new" && (
-                              <div style={{
-                                background: 'green',
-                                color: 'white',
-                                padding: '5px',
-                                position: 'absolute',
-                                top: '10px',
-                                right: '10px',
-                                borderRadius: '5px',
-                                transform: 'rotate(45deg)'
-                              }}>
-                                New
-                              </div>
-                            )}
+                        {item.condition === "new" && (
+                          <div className="shop-product-badge badge-new">
+                            New
+                          </div>
+                        )}
 
                         <CardMedia
                           component="img"
                           alt={item.name}
-                          height="200"
-                          width="300"
+                          className="shop-product-image"
                           image={`http://localhost:5555${item.image}`}
                         />
-                        <CardContent>
-                          <Typography variant="h6" component="div">
+                        <CardContent className="shop-product-content">
+                          <Typography variant="h6" component="h3" className="shop-product-name">
                             {item.name}
                           </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            Price: {item.price}
+                          <Typography variant="body1" className="shop-product-price">
+                            ${item.price}
                           </Typography>
                           <Button
                             variant="contained"
-                            color="primary"
+                            className="shop-add-to-cart-btn"
                             onClick={() => handleAddToCart(item, item.condition)}
                           >
                             Add to Cart
@@ -194,9 +163,13 @@ export const Shop = () => {
                 )}
               </Carousel>
               {displayedItems[category] && displayedItems[category].length < items[category].length && (
-                <div>
-                  <Button onClick={() => handlePrevious(category)}>Previous</Button>
-                  <Button onClick={() => handleNext(category)}>Next</Button>
+                <div className="shop-navigation">
+                  <Button className="shop-nav-btn" onClick={() => handlePrevious(category)}>
+                    Previous
+                  </Button>
+                  <Button className="shop-nav-btn" onClick={() => handleNext(category)}>
+                    Next
+                  </Button>
                 </div>
               )}
             </div>

@@ -5,7 +5,7 @@ import '../components/navbar.css';
 
 export const Navbar = () => {
   const [isLogged, setIsLogged] = useState(false);
-  const [userName, setUserName] = useState(""); // State to hold the user's name
+  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(null);
@@ -15,13 +15,12 @@ export const Navbar = () => {
     const userDetails = JSON.parse(localStorage.getItem('userDetails'));
     setIsLogged(!!userDetails);
 
-    // Set the user's name if available
     if (userDetails && userDetails.firstName) {
       setUserName(userDetails.firstName);
     }
   }, []);
+  
   useEffect(() => {
-    // Determine the active link based on the current location
     if (location.pathname === "/user/Login") {
       setActiveLink("Login");
     } else if (location.pathname === "/user/Singup") {
@@ -40,7 +39,8 @@ export const Navbar = () => {
   }, [location.pathname]);
 
   const handleButtonClick = () => {
-    navigate("/");}
+    navigate("/");
+  };
 
   const handleLogout = async () => {
     try {
@@ -67,58 +67,56 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="navbar" style={{ backgroundImage: 'url("/vector1.png")' }}>
-      
-      <button className="left-button" onClick={handleButtonClick}>
-      <img src="/logo.png" width="200" height="200" alt="Image Alt Text" />
-    </button>
-      <div className="image"></div>
-      <div className="links">
-        {!isLogged ? (
-          <>
-            <Link to="/user/Login" className={activeLink === "Login" ? "active" : ""}>
-              Login
-             
-            </Link>
-            <Link to="/user/Singup" className={activeLink === "Singup" ? "active" : ""}>
-
-              Singup
-            </Link>
-            <Link to="/" className={activeLink === "Home" ? "active" : ""}>
-              Home
-            </Link>
-          </>
-        ) : (
-          <>
-           <Link to="/" className={activeLink === "Home" ? "active" : ""}>
-              Home
-            </Link>
-            
-            <Link to="/about" className={activeLink === "About" ? "active" : ""}>
-              About
-            </Link>
-            <Link to="/account" className={activeLink === "Account" ? "active" : ""}>
-              Account
-            </Link>
-            <Link to="/shop" className={activeLink === "Shop" ? "active" : ""}>
-              Shop
-            </Link>
-            <Link to="/cart" className={activeLink === "Cart" ? "active" : ""}>
-              <span>
-                <ShoppingCart size={36} />
-              </span>
-            </Link>
-            <span
-              onClick={handleLogout}
-              onMouseEnter={() => setIsLogoutHovered(true)}
-              onMouseLeave={() => setIsLogoutHovered(false)}
-              className={isLogoutHovered ? "logout-icon" : ""}
-            >
-              <UserSwitch size={32} />
-            </span>
-          </>
-        )}
+    <nav className="navbar">
+      <div className="navbar-container">
+        <button className="navbar-logo-btn" onClick={handleButtonClick} aria-label="Go to home">
+          <img src="/logo.png" alt="Chanu@Music Logo" className="navbar-logo" />
+        </button>
+        
+        <div className="navbar-links">
+          {!isLogged ? (
+            <>
+              <Link to="/" className={`navbar-link ${activeLink === "Home" ? "active" : ""}`}>
+                Home
+              </Link>
+              <Link to="/user/Login" className={`navbar-link ${activeLink === "Login" ? "active" : ""}`}>
+                Login
+              </Link>
+              <Link to="/user/Singup" className={`navbar-link ${activeLink === "Singup" ? "active" : ""}`}>
+                Signup
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to="/" className={`navbar-link ${activeLink === "Home" ? "active" : ""}`}>
+                Home
+              </Link>
+              <Link to="/about" className={`navbar-link ${activeLink === "About" ? "active" : ""}`}>
+                About
+              </Link>
+              <Link to="/account" className={`navbar-link ${activeLink === "Account" ? "active" : ""}`}>
+                Account
+              </Link>
+              <Link to="/shop" className={`navbar-link ${activeLink === "Shop" ? "active" : ""}`}>
+                Shop
+              </Link>
+              <Link to="/cart" className={`navbar-link navbar-cart ${activeLink === "Cart" ? "active" : ""}`} aria-label="Shopping cart">
+                <ShoppingCart size={28} weight="bold" />
+              </Link>
+              <button
+                onClick={handleLogout}
+                onMouseEnter={() => setIsLogoutHovered(true)}
+                onMouseLeave={() => setIsLogoutHovered(false)}
+                className={`navbar-logout ${isLogoutHovered ? "hovered" : ""}`}
+                aria-label="Logout"
+                title="Logout"
+              >
+                <UserSwitch size={28} weight="bold" />
+              </button>
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
