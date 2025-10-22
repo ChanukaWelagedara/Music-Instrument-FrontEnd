@@ -136,12 +136,14 @@ export const Shop = () => {
                           </div>
                         )}
 
-                        <CardMedia
-                          component="img"
-                          alt={item.name}
-                          className="shop-product-image"
-                          image={`http://localhost:5555${item.image}`}
-                        />
+                        <div className="shop-product-image-wrapper">
+                          <CardMedia
+                            component="img"
+                            alt={item.name}
+                            className="shop-product-image"
+                            image={`http://localhost:5555${item.image}`}
+                          />
+                        </div>
                         <CardContent className="shop-product-content">
                           <Typography variant="h6" component="h3" className="shop-product-name">
                             {item.name}
@@ -154,7 +156,7 @@ export const Shop = () => {
                             className="shop-add-to-cart-btn"
                             onClick={() => handleAddToCart(item, item.condition)}
                           >
-                            Add to Cart
+                            BROWSE
                           </Button>
                         </CardContent>
                       </Card>
