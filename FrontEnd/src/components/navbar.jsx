@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ShoppingCart, UserSwitch } from "phosphor-react";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import '../components/navbar.css';
 
 export const Navbar = () => {

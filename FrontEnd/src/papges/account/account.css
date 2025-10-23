@@ -135,7 +135,7 @@
   .items-for-sale .MuiTable-root {
     min-width: 900px;
   }
-  
+
   .items-for-sale .MuiTableContainer-root {
     overflow-x: auto;
   }
@@ -145,11 +145,11 @@
   .account-page {
     padding: var(--spacing-xl) 0;
   }
-  
+
   .items-for-sale h2 {
     font-size: var(--font-size-xl);
   }
-  
+
   .items-for-sale img {
     width: 80px !important;
     height: 80px !important;

@@ -1,23 +1,31 @@
-/* CSS Variables for Design System - Matching Uploaded UI */
+/* CSS Variables for Design System - Dark Elegant Theme (Jbanez Style) */
 :root {
-  /* Colors - Neutral & Clean Palette */
-  --color-primary: #ff6b35;
-  --color-primary-dark: #e55a2b;
-  --color-primary-light: #ff8659;
-  --color-secondary: #2c3e50;
-  --color-secondary-dark: #1a252f;
-  --color-secondary-light: #34495e;
+  /* Colors - Dark & Orange Palette */
+  --color-primary: #ff9f43;
+  --color-primary-dark: #e88e2e;
+  --color-primary-light: #ffb366;
+  --color-secondary: #1a1a1a;
+  --color-secondary-dark: #0d0d0d;
+  --color-secondary-light: #2d2d2d;
   --color-success: #27ae60;
-  --color-warning: #f39c12;
+  --color-warning: #ff9f43;
   --color-danger: #e74c3c;
-  --color-dark: #2c3e50;
+  --color-dark: #0f0f0f;
+  --color-dark-grey: #1a1a1a;
+  --color-medium-grey: #2d2d2d;
+  --color-light-grey: #3a3a3a;
   --color-light: #f8f9fa;
   --color-white: #ffffff;
-  --color-text-primary: #2c3e50;
-  --color-text-secondary: #7f8c8d;
-  --color-border: #ecf0f1;
-  --color-hover: #f5f6f7;
-  
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b8b8b8;
+  --color-text-tertiary: #888888;
+  --color-text-dark: #2c3e50;
+  --color-border: #2d2d2d;
+  --color-border-light: #3a3a3a;
+  --color-hover: #252525;
+  --color-bg-dark: #0f0f0f;
+  --color-bg-card: #1a1a1a;
+
   /* Spacing */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -26,22 +34,26 @@
   --spacing-xl: 32px;
   --spacing-2xl: 48px;
   --spacing-3xl: 64px;
-  
-  /* Border Radius - Soft & Modern */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 20px;
+  --spacing-4xl: 80px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
   --radius-full: 9999px;
-  
+
   /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  
-  /* Typography - Clean & Readable */
-  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.6);
+  --shadow-orange: 0 4px 16px rgba(255, 159, 67, 0.3);
+
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
+  --font-family-heading: "Georgia", serif;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -50,9 +62,11 @@
   --font-size-2xl: 1.75rem;
   --font-size-3xl: 2.25rem;
   --font-size-4xl: 3rem;
-  
+  --font-size-5xl: 3.75rem;
+
   /* Transitions */
-  --transition: all 0.3s ease;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -67,28 +81,46 @@ body {
   font-size: var(--font-size-base);
   line-height: 1.6;
   color: var(--color-text-primary);
-  background-color: var(--color-white);
+  background-color: var(--color-bg-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: var(--spacing-md);
 }
 
-h1 { font-size: var(--font-size-4xl); }
-h2 { font-size: var(--font-size-3xl); }
-h3 { font-size: var(--font-size-2xl); }
-h4 { font-size: var(--font-size-xl); }
-h5 { font-size: var(--font-size-lg); }
-h6 { font-size: var(--font-size-base); }
+h1 {
+  font-size: var(--font-size-4xl);
+}
+h2 {
+  font-size: var(--font-size-3xl);
+}
+h3 {
+  font-size: var(--font-size-2xl);
+}
+h4 {
+  font-size: var(--font-size-xl);
+}
+h5 {
+  font-size: var(--font-size-lg);
+}
+h6 {
+  font-size: var(--font-size-base);
+}
 
 /* Links */
 a {

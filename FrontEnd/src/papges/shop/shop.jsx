@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import axios from 'axios';
+import { useContext, useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import CircularProgress from '@mui/material/CircularProgress';
 import { ShopContext } from '../../context/shop-context';
 import './shop.css';
 
