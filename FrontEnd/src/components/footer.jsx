@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="footer-newsletter-content">
           <h3 className="footer-newsletter-title">Subscribe Our Newsletter</h3>
           <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--spacing-lg)', fontSize: 'var(--font-size-sm)' }}>
-            Lorem ipsum is simply dummy text of the printing and typesetting industry.
+            Stay updated with the latest products and exclusive offers from Chanu Music.
           </p>
           <div className="footer-newsletter-form">
             <input 
@@ -23,21 +23,20 @@ export const Footer = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
-            <h4 style={{ color: 'var(--color-primary)', marginBottom: 'var(--spacing-lg)', fontSize: 'var(--font-size-lg)' }}>Jbanez</h4>
+            <h4 style={{ color: 'var(--color-primary)', marginBottom: 'var(--spacing-lg)', fontSize: 'var(--font-size-lg)' }}>Chanu Music Shop</h4>
             <p style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', lineHeight: '1.8' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. 
-              Cum sociis natoque penatibus.
+              Discover premium musical instruments and accessories for musicians of all levels.
             </p>
             <div style={{ marginTop: 'var(--spacing-lg)', display: 'flex', gap: 'var(--spacing-md)' }}>
               <a href="#" style={{ color: 'var(--color-text-primary)', fontSize: '20px' }}>f</a>
-              <a href="#" style={{ color: 'var(--color-text-primary)', fontSize: '20px' }}>t</a>
-              <a href="#" style={{ color: 'var(--color-text-primary)', fontSize: '20px' }}>in</a>
-              <a href="#" style={{ color: 'var(--color-text-primary)', fontSize: '20px' }}>yt</a>
+              <a href="#" style={{ color: 'var(--color-text-primary)', fontSize: '20px' }}>📷</a>
+              <a href="#" style={{ color: 'var(--color-text-primary)', fontSize: '20px' }}>▶</a>
+              <a href="#" style={{ color: 'var(--color-text-primary)', fontSize: '20px' }}>♪</a>
             </div>
           </div>
 
           <div className="footer-section">
-            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: 'var(--spacing-lg)', fontSize: 'var(--font-size-base)' }}>Other Pages</h4>
+            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: 'var(--spacing-lg)', fontSize: 'var(--font-size-base)' }}>Quick Links</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}>
               <a href="/" style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', textDecoration: 'none' }}>Home</a>
               <a href="/about" style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', textDecoration: 'none' }}>About Us</a>
@@ -48,13 +47,12 @@ export const Footer = () => {
           </div>
 
           <div className="footer-section">
-            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: 'var(--spacing-lg)', fontSize: 'var(--font-size-base)' }}>Quick Link</h4>
+            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: 'var(--spacing-lg)', fontSize: 'var(--font-size-base)' }}>Follow Us</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}>
-              <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', textDecoration: 'none' }}>Website Builder</a>
-              <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', textDecoration: 'none' }}>Ecommerce Web</a>
-              <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', textDecoration: 'none' }}>Web Hosting</a>
-              <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', textDecoration: 'none' }}>Online Support</a>
-              <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', textDecoration: 'none' }}>Careers</a>
+              <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', textDecoration: 'none' }}>Facebook</a>
+              <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', textDecoration: 'none' }}>Instagram</a>
+              <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', textDecoration: 'none' }}>YouTube</a>
+              <a href="#" style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-sm)', textDecoration: 'none' }}>TikTok</a>
             </div>
           </div>
 
@@ -70,7 +68,7 @@ export const Footer = () => {
                   <span style={{ color: 'var(--color-primary)' }}>📞</span> +62 345 678 890
                 </p>
                 <p style={{ margin: 0, display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)', marginTop: 'var(--spacing-xs)' }}>
-                  <span style={{ color: 'var(--color-primary)' }}>📧</span> Jbanez@Domain.Com
+                  <span style={{ color: 'var(--color-primary)' }}>📧</span> info@chanumusic.com
                 </p>
               </div>
             </div>
@@ -79,10 +77,7 @@ export const Footer = () => {
         
         <div className="footer-text" style={{ marginTop: 'var(--spacing-3xl)', textAlign: 'center', paddingTop: 'var(--spacing-xl)', borderTop: '1px solid var(--color-border)' }}>
           <p className="footer-copyright">
-            Copyright © 2023 Chanu@Music.
-          </p>
-          <p className="footer-rights">
-            All Rights Reserved
+            © 2025 Chanu Music. All Rights Reserved.
           </p>
           <div className="footer-payment" style={{ marginTop: 'var(--spacing-lg)', alignItems: 'center' }}>
             <img 
