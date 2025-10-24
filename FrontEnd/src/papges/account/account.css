@@ -1,133 +1,151 @@
-/* Clean Account Page - Matching Uploaded UI */
+/* Light Modern Account Page - MelodyMart Style */
 .account-page {
   min-height: 100vh;
-  background-color: var(--color-light);
-  padding: var(--spacing-3xl) 0;
+  background-color: #ffffff;
+  padding: var(--spacing-4xl) 0;
 }
 
 .user-info {
-  max-width: 1280px;
-  margin: 0 auto var(--spacing-2xl);
+  max-width: 1400px;
+  margin: 0 auto var(--spacing-3xl);
   padding: 0 var(--spacing-xl);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-xl);
 }
 
 .user-info .MuiCard-root {
-  border-radius: var(--radius-lg) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-  padding: var(--spacing-xl) !important;
-  background-color: var(--color-white) !important;
-  border: 1px solid var(--color-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+  padding: var(--spacing-2xl) !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e8e8e8 !important;
+  transition: all 0.3s ease !important;
+}
+
+.user-info .MuiCard-root:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-2px);
 }
 
 .user-info button {
-  padding: 12px 28px;
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  padding: 14px 32px;
+  background-color: #000000;
+  color: #ffffff;
   border: none;
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-base);
+  border-radius: 6px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   align-self: flex-start;
+  text-transform: none;
+  letter-spacing: 0.3px;
 }
 
 .user-info button:hover {
-  background-color: var(--color-primary-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  background-color: #2d2d2d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .items-for-sale {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--spacing-xl);
 }
 
 .items-for-sale h2 {
-  font-size: var(--font-size-2xl);
-  font-weight: 700;
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-xl);
-  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: var(--spacing-2xl);
+  text-align: left;
+  letter-spacing: -0.5px;
 }
 
 .items-for-sale .MuiTableContainer-root {
-  background-color: var(--color-white);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  border: 1px solid var(--color-border);
+  border: 1px solid #e8e8e8;
 }
 
 .items-for-sale .MuiTableHead-root .MuiTableCell-root {
-  background-color: var(--color-light);
-  color: var(--color-text-primary) !important;
+  background-color: #f8f8f8;
+  color: #1a1a1a !important;
   font-weight: 600 !important;
-  font-size: var(--font-size-base) !important;
-  padding: var(--spacing-lg) !important;
-  border-bottom: 2px solid var(--color-border) !important;
+  font-size: 14px !important;
+  padding: 18px 16px !important;
+  border-bottom: 2px solid #e8e8e8 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .items-for-sale .MuiTableBody-root .MuiTableRow-root {
-  transition: var(--transition);
-  border-bottom: 1px solid var(--color-border) !important;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0 !important;
+  background-color: #ffffff;
 }
 
 .items-for-sale .MuiTableBody-root .MuiTableRow-root:hover {
-  background-color: var(--color-hover);
+  background-color: #fafafa;
+  transform: scale(1.001);
 }
 
 .items-for-sale .MuiTableCell-root {
-  padding: var(--spacing-md) !important;
-  font-size: var(--font-size-sm) !important;
-  color: var(--color-text-primary) !important;
+  padding: 16px !important;
+  font-size: 14px !important;
+  color: #333333 !important;
 }
 
 .items-for-sale img {
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  transition: var(--transition);
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+  object-fit: cover;
 }
 
 .items-for-sale img:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .items-for-sale button {
-  padding: 8px 20px;
+  padding: 9px 20px;
   border: none;
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-sm);
+  border-radius: 6px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition);
-  min-width: 80px;
+  transition: all 0.3s ease;
+  min-width: 75px;
+  text-transform: none;
 }
 
 .items-for-sale .MuiTableCell-root:nth-last-child(2) button {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .items-for-sale .MuiTableCell-root:nth-last-child(2) button:hover {
-  background-color: var(--color-primary-dark);
-  transform: translateY(-1px);
+  background-color: #2d2d2d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .items-for-sale .MuiTableCell-root:last-child button {
-  background-color: var(--color-white);
-  color: var(--color-danger);
-  border: 2px solid var(--color-danger);
+  background-color: #ffffff;
+  color: #dc2626;
+  border: 1.5px solid #dc2626;
 }
 
 .items-for-sale .MuiTableCell-root:last-child button:hover {
-  background-color: var(--color-danger);
-  color: var(--color-white);
-  transform: translateY(-1px);
+  background-color: #dc2626;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
 }
 
 /* Responsive Design */
